@@ -73,6 +73,7 @@ public class PlagiarismChecker {
         int bigCaseOne = Math.max(caseOne, caseTwo);
         int bigCaseTwo = Math.max(caseThree, caseFour);
         int longest = Math.max(bigCaseOne, bigCaseTwo);
+        // Save answer to table
         if(index != -1){
             table[indexOfFirstChar][index] = longest;
         }
