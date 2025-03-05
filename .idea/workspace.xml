@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f68ad4e4-7dd7-4950-93fb-5d96ae262228" name="Changes" comment="Commit #1">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/PlagiarismChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PlagiarismChecker.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -23,7 +24,7 @@
 }</component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/ztblick/DiffStudentCode&quot;,
+    &quot;url&quot;: &quot;https://github.com/dvillegas8/DiffStudentCodeDiego.git&quot;,
     &quot;accountId&quot;: &quot;43da8e01-3c98-4b03-b0d8-2727a0ebf9d9&quot;
   }
 }</component>
@@ -39,8 +40,9 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Downloaded.Files.Path.Enabled": "false",
-    "JUnit.PlagiarismCheckerTest.testCorrectMed.executor": "Debug",
-    "JUnit.PlagiarismCheckerTest.testCorrectSmall.executor": "Run",
+    "JUnit.PlagiarismCheckerTest.executor": "Run",
+    "JUnit.PlagiarismCheckerTest.testCorrectMed.executor": "Run",
+    "JUnit.PlagiarismCheckerTest.testCorrectSmall.executor": "Debug",
     "JUnit.PlagiarismCheckerTest.testEdgeCase.executor": "Debug",
     "JUnit.PlagiarismCheckerTest.testEfficientLarge.executor": "Run",
     "JUnit.PlagiarismCheckerTest.testEfficientLargest.executor": "Run",
@@ -52,7 +54,16 @@
     "kotlin-language-version-configured": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.PlagiarismCheckerTest.testCorrectMed">
+  <component name="RunManager" selected="JUnit.PlagiarismCheckerTest">
+    <configuration name="PlagiarismCheckerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="DiffStudentCode" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="PlagiarismCheckerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="PlagiarismCheckerTest.testCorrectMed" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="DiffStudentCode" />
       <option name="PACKAGE_NAME" value="" />
@@ -68,16 +79,6 @@
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="PlagiarismCheckerTest" />
       <option name="METHOD_NAME" value="testCorrectSmall" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PlagiarismCheckerTest.testEdgeCase" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="DiffStudentCode" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="PlagiarismCheckerTest" />
-      <option name="METHOD_NAME" value="testEdgeCase" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -105,11 +106,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.PlagiarismCheckerTest" />
+        <item itemvalue="JUnit.PlagiarismCheckerTest.testCorrectSmall" />
         <item itemvalue="JUnit.PlagiarismCheckerTest.testCorrectMed" />
         <item itemvalue="JUnit.PlagiarismCheckerTest.testEfficientLargest" />
         <item itemvalue="JUnit.PlagiarismCheckerTest.testEfficientLarge" />
-        <item itemvalue="JUnit.PlagiarismCheckerTest.testCorrectSmall" />
-        <item itemvalue="JUnit.PlagiarismCheckerTest.testEdgeCase" />
       </list>
     </recent_temporary>
   </component>
@@ -130,7 +131,15 @@
       <option name="project" value="LOCAL" />
       <updated>1740721574078</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Commit #1">
+      <option name="closed" value="true" />
+      <created>1740721675529</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1740721675529</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -142,8 +151,8 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/PlagiarismChecker.java</url>
-          <line>22</line>
-          <option name="timeStamp" value="9" />
+          <line>20</line>
+          <option name="timeStamp" value="16" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

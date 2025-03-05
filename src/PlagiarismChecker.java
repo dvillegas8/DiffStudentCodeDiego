@@ -17,67 +17,45 @@ public class PlagiarismChecker {
     public static int longestSharedSubstring(String doc1, String doc2) {
 
         // TODO Complete this function to return the length of the longest shared substring.
-        int[][] table = new int[doc1.length()][doc2.length()];
-        int longest = returnLongest(doc1, doc2, 0, table, 0);
+        int[][] table = new int[doc1.length() + 1][doc2.length() + 1];
+        int longest = largestCommonSubsequenceTabulation(doc1, doc2, table);
 
         return longest;
     }
-    public static int returnLongest(String doc1, String doc2, int counter, int[][] table, int indexOfFirstChar){
+    public static int largestCommonSubsequenceMemoization(String doc1, String doc2, int[][]table, int i, int j){
         // Base cases
-        int index = doc2.indexOf(doc1.charAt(0));
-        if(index != -1){
-            if(table[indexOfFirstChar][index] != 0){
-                return table[indexOfFirstChar][index];
+        if(table[i][j] != 0){
+            return table[i][j];
+        }
+        if(i == 0){
+            return 0;
+        }
+        if(j == 0){
+            return 0;
+        }
+        // Recursive step: If letters match
+        if(doc1.charAt(i - 1) == doc2.charAt(j - 1)){
+            table[i][j] = largestCommonSubsequenceMemoization(doc1, doc2, table, i - 1, j - 1) + 1;
+        }
+        // Recursive step: Check top or left
+        else{
+            table[i][j] = Math.max(largestCommonSubsequenceMemoization(doc1, doc2, table, i - 1, j), largestCommonSubsequenceMemoization(doc1, doc2, table, i, j - 1));
+        }
+        return table[i][j];
+    }
+    public static int largestCommonSubsequenceTabulation(String doc1, String doc2, int[][]table) {
+        for(int i = 1; i < table.length; i++){
+            for(int j = 1; j < table[0].length; j++){
+                // Check if letters match
+                if(doc1.charAt(i - 1) == doc2.charAt(j - 1)){
+                    table[i][j] = table[i - 1][j-1] + 1;
+                }
+                else{
+                    // Check left and top, grab the bigger answer
+                    table[i][j] = Math.max(table[i][j - 1], table[i - 1][j]);
+                }
             }
         }
-        if(doc1.length() == 1){
-            // If the last char is present in doc 2
-            if(doc2.indexOf(doc1.charAt(0)) != -1){
-                return counter + 1;
-            }
-            else{
-                return counter;
-            }
-        }
-        if(doc2.length() == 1) {
-            // If the last char is present in doc 1
-            if (doc1.indexOf(doc2.charAt(0)) != -1) {
-                return counter + 1;
-            } else {
-                return counter;
-            }
-        }
-        if(doc1.isEmpty() || doc2.isEmpty()){
-            return counter;
-        }
-        int caseOne = 0;
-        int caseTwo = 0;
-        int caseThree = 0;
-        int caseFour = 0;
-        // recursive steps
-        // Include
-        if(index != -1){
-            caseOne = returnLongest(doc1.substring(1), doc2.substring(index + 1), counter + 1, table,indexOfFirstChar + 1);
-        }
-        // Exclude
-        caseTwo = returnLongest(doc1.substring(1), doc2, counter, table, indexOfFirstChar + 1);
-        /*
-        // Get the first instance of the first char in doc 2 in doc 1
-        int indexTwo = doc1.indexOf(doc2.charAt(0));
-        if(index != -1){
-            caseThree = returnLongest(doc1.substring(indexTwo + 1), doc2.substring(1), counter + 1);
-        }
-
-         */
-        // caseFour = returnLongest(doc1, doc2.substring(1), counter);
-        int bigCaseOne = Math.max(caseOne, caseTwo);
-        int bigCaseTwo = Math.max(caseThree, caseFour);
-        int longest = Math.max(bigCaseOne, bigCaseTwo);
-        // Save answer to table
-        if(index != -1){
-            table[indexOfFirstChar][index] = longest;
-        }
-        // Returns the biggest number
-        return longest;
+        return table[doc1.length()][doc2.length()];
     }
 }
